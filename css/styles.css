@@ -1,0 +1,85 @@
+/*
+Name: Rohan Mallu
+Date Created: December 3rd 2024
+File: styles.css
+GUI Assignment: Implementing a Bit of Scrabble with Drag-and-Drop
+Description: CSS file for HW5.
+*/
+
+body {
+    background-color:lightgreen;
+}
+
+h1 {
+    text-align: center;
+    color:crimson;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    padding: 10px;
+}
+
+.instructions {
+    text-align: center;
+}
+
+/* Holds the scrabble tiles and rack */
+.tile-holder {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:0px;
+    width: 50%;
+
+}
+
+/* Image of a tile rack*/
+.rack {
+    margin-top: -100px;
+}
+
+/* Div container containg all of the squares*/
+.tile-board {
+    display: inline-block;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 75px;
+    width: 105%;
+}
+
+/*DIV class to hold score components*/
+.gamescore {
+    display: flex;
+    gap: 1.0rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 43%;
+    font-weight: bold;
+}
+
+.buttons {
+    display: flex;
+    gap: 1.0rem;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
+
+}
+
+
+/* List of generated tiles */
+.tile-list {
+    width: 5250px;
+    margin-top: 75px;
+}
+
+/* Used to make the tiles draggable */
+.myTiles {
+    height: 70px;
+    width: 70px;
+    padding: 5px;
+}
+
+/* Display each board square as one line*/
+.square {
+    display: inline-block;
+}
+

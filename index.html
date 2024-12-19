@@ -1,0 +1,92 @@
+<!--
+Name: Rohan Mallu
+Date Created: December 3rd 2024
+File: index.html
+GUI Assignment: Implementing a Bit of Scrabble with Drag-and-Drop
+Description: HTML file for HW5.
+-->
+
+<!-- General Resources:
+ - Scrabble Tile Graphics: graphics_data/Scrabble_Tiles, given by instructor
+ - JSON Array String: Created from pieces.json by Ramon Meza, given by instructor
+ - Scrabble Tile Rack: graphics_data/scrabble-tile-holder-406774_640.png, given by instructor
+ - Scrabble Blank Square: graphics_data/Scrabble_Board_Blank_Tile.png, created from graphics_data/Scrabble_Board_OneLine.png, given by instructor
+ - Scrabble Double Word Square: graphics_data/Scrabble_Board_Double_Word_Tile.png, created from graphics_data/Scrabble_Board_OneLine.png, given by instructor
+ - Scrabble Double Letter Square graphics_data/Scrabble_Board_Double_Word_Tile.png, created from graphics_data/Scrabble_Board_OneLine.png, given by instructor
+ - jQuery Button UI: https://jqueryui.com/button/ 
+ -->
+
+<!doctype html>
+<html lang = "en">
+    <head>
+        <meta-charset="utf-8">
+        <title>Implementing a Bit of Scrabble with Drag-and-Drop</title>
+        <!-- Custom CSS -->
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+        <!-- jQuery CSS file -->
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/smoothness/jquery-ui.css"> 
+    </head>
+    <body>
+        <h1>Scrabble</h1>
+        <!-- Instructions on how to play the game -->
+        <p class="instructions">Drag a tile from the rack onto the board. </p>
+        <p class="instructions">If there are no gaps between tiles on the board, you word will be accepted. </p>
+        <p class="instructions">To submit a word, click the <b>Submit Word</b> button if your word is longer than one character. </p>
+        <p class="instructions">You can select new tiles at any time by clicking the <b>New Tiles</b> button. </p>
+        <p class="instructions">If you want to start a new game, click the <b>Reset Game</b> button.</p>
+
+        <!-- Stores all of the score components -->
+        <div class="gamescore">
+            <p>Word: <span id="word">---------------</span></p>
+            <p>Score: <span id="score">0</span></p>
+            <p>Total Score: <span id="total-score">0</span></p>
+            <p>Remaining Tiles: <span id="tile-count">100</span></p>
+        </div>
+
+        
+        
+        <!-- Contains squares for a single row of Scrabble, including double score squares  -->
+        <div class="tile-board">
+            <div id="square0" class="square"><img src="graphics_data/Scrabble_Board_Blank_Tile.png"></div>
+            <div id="square1" class="square"><img src="graphics_data/Scrabble_Board_Blank_Tile.png"></div>
+            <div id="square2" class="square"><img src="graphics_data/Scrabble_Board_Double_Word_Tile.png"></div>
+            <div id="square3" class="square"><img src="graphics_data/Scrabble_Board_Blank_Tile.png"></div>
+            <div id="square4" class="square"><img src="graphics_data/Scrabble_Board_Blank_Tile.png"></div>
+            <div id="square5" class="square"><img src="graphics_data/Scrabble_Board_Blank_Tile.png"></div>
+            <div id="square6" class="square"><img src="graphics_data/Scrabble_Board_Double_Letter_Tile.png"></div>
+            <div id="square7" class="square"><img src="graphics_data/Scrabble_Board_Blank_Tile.png"></div>
+            <div id="square8" class="square"><img src="graphics_data/Scrabble_Board_Double_Letter_Tile.png"></div>
+            <div id="square9" class="square"><img src="graphics_data/Scrabble_Board_Blank_Tile.png"></div>
+            <div id="square10"class="square"><img src="graphics_data/Scrabble_Board_Blank_Tile.png"></div>
+            <div id="square11"class="square"><img src="graphics_data/Scrabble_Board_Blank_Tile.png"></div>
+            <div id="square12"class="square"><img src="graphics_data/Scrabble_Board_Double_Word_Tile.png"></div>
+            <div id="square13"class="square"><img src="graphics_data/Scrabble_Board_Blank_Tile.png"></div>
+            <div id="square14"class="square"><img src="graphics_data/Scrabble_Board_Blank_Tile.png"></div>
+        </div>
+
+        <!-- Button Container; Submit Word button is only enabled when there is more than one tile on the board -->
+        <div class="buttons">
+            <button id = "submit" class="ui-button ui-widget ui-corner-all">Submit Word</button>
+            <button id = "swap-tiles" class="change ui-button ui-widget ui-corner-all">New Tiles</button>
+            <button id = "reset" class="ui-button ui-widget ui-corner-all">Reset Game</button>
+        </div>
+        <!-- Container for dynamic list of tiles and the rack photo -->
+        <div class="tile-holder">
+            <div class="tile-list">
+                
+            </div>
+            <img src="graphics_data/scrabble-tile-holder-406774_640.png" class="rack" width="550" height="100">
+        </div>
+
+        <!-- jQuery CDN links -->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="js/tiles.js"></script>
+        <script src="js/jquery-draggable.js"></script>
+        <script src="js/jquery-buttons.js"></script>
+    </body>
+</html>
